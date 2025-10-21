@@ -20,7 +20,7 @@ export default defineConfig([
       globals: globals.browser,
     },
     rules: {
-      'max-lines': ['error', 5], 
+      'max-lines': ['error', 100], 
       '@typescript-eslint/no-explicit-any': 'error', 
       '@typescript-eslint/typedef': ['error', { arrayDestructuring: true, arrowParameter: true }],
       'react/jsx-no-literals': ['error', { noStrings: true }], 
