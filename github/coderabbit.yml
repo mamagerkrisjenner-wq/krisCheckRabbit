@@ -1,0 +1,35 @@
+version: 1
+reviews:
+  enabled: true
+  summary: true
+  inline_comments: true
+  reviewer: "CodeRabbit"
+  languages:
+    - typescript
+  conventions:
+    files:
+      max_lines: 100
+    types:
+      no_any: true
+      require_types: true
+    conditions:
+      use_if_or_ternary: true
+      ternary_single_line: true
+    functions:
+      use_arrow_functions: true
+      no_anonymous_functions: true
+    react:
+      no_class_components: true
+      no_createClass: true
+      require_type_in_component: true
+    naming:
+      variable_case: "camelCase"
+      component_case: "PascalCase"
+      meaningful_names: true
+    files_structure:
+      one_component_per_file: true
+      file_name_matches_component: true
+    code_style:
+      quotes: "'"
+    objects:
+      no_index_as_key: true
