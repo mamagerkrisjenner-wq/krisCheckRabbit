@@ -8,7 +8,7 @@ reviews:
     - typescript
   conventions:
     files:
-      max_lines: 100
+      max_lines: 5
     types:
       no_any: true
       require_types: true
@@ -22,6 +22,7 @@ reviews:
       no_class_components: true
       no_createClass: true
       require_type_in_component: true
+      constants_for_literals: true     
     naming:
       variable_case: "camelCase"
       component_case: "PascalCase"
@@ -33,3 +34,7 @@ reviews:
       quotes: "'"
     objects:
       no_index_as_key: true
+    project_rules:
+      colors:
+        format: "rgb_or_rgba"       
+        store_in_file: true  
