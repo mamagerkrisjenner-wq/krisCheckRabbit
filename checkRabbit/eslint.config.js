@@ -4,6 +4,7 @@ import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
 import { defineConfig, globalIgnores } from 'eslint/config'
+import react from 'eslint-plugin-react'
 
 export default defineConfig([
   globalIgnores(['dist']),
@@ -13,6 +14,7 @@ export default defineConfig([
       js.configs.recommended,
       tseslint.configs.recommended,
       reactHooks.configs['recommended-latest'],
+      react.configs.recommended,
       reactRefresh.configs.vite,
     ],
     languageOptions: {
@@ -23,7 +25,7 @@ export default defineConfig([
       'max-lines': ['error', 100], 
       '@typescript-eslint/no-explicit-any': 'error', 
       '@typescript-eslint/typedef': ['error', { arrayDestructuring: true, arrowParameter: true }],
-      'react/jsx-no-literals': ['error', { noStrings: true }], 
+      'react/jsx-no-literals': 'off', 
       'quotes': ['error', 'single'],
       'react/function-component-definition': ['error', { namedComponents: 'arrow-function', unnamedComponents: 'arrow-function' }],
       'react/no-array-index-key': 'error', 

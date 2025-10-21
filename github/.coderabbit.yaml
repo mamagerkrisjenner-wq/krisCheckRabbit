@@ -12,32 +12,26 @@ reviews:
   request_changes_workflow: true
   review_status: true
   collapse_walkthrough: false
-
-  # Filter files for review
   path_filters:
-    include:
-      - "src/**/*.ts"      # All TypeScript files
-      - "src/**/*.tsx"     # All TSX/React component files
-    exclude:
-      - "node_modules/**"  # Ignore dependencies
-      - "dist/**"          # Ignore build output
-
-  # Custom AI review instructions for CodeRabbit
+    - "src//*.ts"      # All TypeScript files
+    - "src//*.tsx"     # All TSX/React component files
+    - "!node_modules/"  # Ignore dependencies
+    - "!dist/"          # Ignore build output
   path_instructions:
-    - path: "src/**/*.ts"
+    - path: "src//*.ts"
       instructions: |
         ⚠ Review TypeScript files for adherence to project conventions:
         - Files must be fewer than 100 lines
-        - All variables and functions must have explicit types; avoid `any`
+        - All variables and functions must have explicit types; avoid any
         - Use ternary operators only for single-line conditional assignments
         - Use arrow functions; avoid anonymous functions
         - Use camelCase for variable and function names
         - Define constants for strings and numbers; avoid inline literals
-        - Do not use `index` as object keys; use meaningful names
-        - Use single quotes `'` for strings
-        - Put colors in RGB or RGBA (rgba only if transparent) in a separate `colors.ts` file
+        - Do not use index as object keys; use meaningful names
+        - Use single quotes ' for strings
+        - Put colors in RGB or RGBA (rgba only if transparent) in a separate colors.ts file
 
-    - path: "src/components/**/*.tsx"
+    - path: "src/components//*.tsx"
       instructions: |
         ⚠ Review React component files:
         - Each component must be in a separate file, named after the component
