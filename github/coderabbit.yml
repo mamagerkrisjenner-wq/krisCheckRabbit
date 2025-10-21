@@ -6,6 +6,15 @@ reviews:
   reviewer: "CodeRabbit"
   languages:
     - typescript
+  reviews:
+  enabled: true
+  summary: true
+  inline_comments: true
+  reviewer: "CodeRabbit"
+  languages:
+    - typescript
+  integrations:
+    eslint: true
   conventions:
     files:
       max_lines: 5
@@ -37,4 +46,4 @@ reviews:
     project_rules:
       colors:
         format: "rgb_or_rgba"       
-        store_in_file: true  
+        store_in_file: true 

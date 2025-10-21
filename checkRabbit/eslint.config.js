@@ -19,5 +19,15 @@ export default defineConfig([
       ecmaVersion: 2020,
       globals: globals.browser,
     },
+    rules: {
+      'max-lines': ['error', 5], 
+      '@typescript-eslint/no-explicit-any': 'error', 
+      '@typescript-eslint/typedef': ['error', { arrayDestructuring: true, arrowParameter: true }],
+      'react/jsx-no-literals': ['error', { noStrings: true }], 
+      'quotes': ['error', 'single'],
+      'react/function-component-definition': ['error', { namedComponents: 'arrow-function', unnamedComponents: 'arrow-function' }],
+      'react/no-array-index-key': 'error', 
+      'no-magic-numbers': ['error', { ignore: [0,1], ignoreArrayIndexes: true }], 
+    },
   },
 ])
