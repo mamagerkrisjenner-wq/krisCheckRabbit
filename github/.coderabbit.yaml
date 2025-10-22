@@ -1,26 +1,20 @@
-# CodeRabbit configuration for TypeScript project
+language: "en-US"
+early_access: false
+tone_instructions: 'You are an expert code reviewer in Java, TypeScript, JavaScript, and NodeJS. You work in an enterprise software developer team, providing concise and clear code review advice. You only elaborate or provide detailed explanations when requested.'
 reviews:
-  # Use assertive profile for stricter AI reviews
-  profile: assertive
+  profile: "assertive"
+  request_changes_workflow: false
   high_level_summary: true
+  poem: true
+  review_status: true
+  collapse_walkthrough: false
   auto_review:
     enabled: true
     drafts: false
-  tools:
-    eslint:
-      enabled: true  # Run ESLint as part of the review
-  request_changes_workflow: true
-  review_status: true
-  collapse_walkthrough: false
-  path_filters:
-    - "src//*.ts"      # All TypeScript files
-    - "src//*.tsx"     # All TSX/React component files
-    - "!node_modules/"  # Ignore dependencies
-    - "!dist/"          # Ignore build output
   path_instructions:
-    - path: "src//*.ts"
+    - path: "src/**/*.ts"
       instructions: |
-        ⚠ Review TypeScript files for adherence to project conventions:
+        Review TypeScript files for adherence to project conventions:
         - Files must be fewer than 100 lines
         - All variables and functions must have explicit types; avoid any
         - Use ternary operators only for single-line conditional assignments
@@ -31,9 +25,11 @@ reviews:
         - Use single quotes ' for strings
         - Put colors in RGB or RGBA (rgba only if transparent) in a separate colors.ts file
 
-    - path: "src/components//*.tsx"
+    - path: "src/components/**/*.tsx"
       instructions: |
-        ⚠ Review React component files:
+        Review React component files:
         - Each component must be in a separate file, named after the component
         - Components must have explicit types
-        - Do not use React.createClass or React.Component
+        - Do not use React.createClass or React.Component 
+chat:
+  auto_reply: true
