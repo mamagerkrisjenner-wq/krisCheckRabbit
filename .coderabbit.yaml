@@ -6,7 +6,14 @@ reviews:
   path_instructions:
     - path: '**/*.tsx'
       instructions: |
-        - Ensure files have less than 100 lines
+        - Ensure files have less than 100 lines not include imports and exports
+        - Ensure function are less then 30 lines
+        - Ensure variables are declared with const or let; never use var
+        - Ensure all imports are at the top of the file
+        - Ensure efficient code structure and organization
+        - Avoid duplicate imports from the same module; consolidate them into a single import statement
+        - Avoid unused imports; remove any imports that are not used in the file
+        - Avoid duplicate code; refactor repeated code into reusable functions or components
         - All variables, parameters, and return types must have explicit types; never use 'any' type
         - Use ternary operator when assigning values to variables; use if/else for other logic
         - Ternary conditions must be on a single line
@@ -25,6 +32,13 @@ reviews:
     - path: '**/*.ts'
       instructions: |
         - Ensure files have less than 100 lines
+        - Ensure function are less then 30 lines
+        - Ensure variables are declared with const or let; never use var
+        - Ensure all imports are at the top of the file
+        - Ensure efficient code structure and organization
+        - Avoid duplicate imports from the same module; consolidate them into a single import statement
+        - Avoid unused imports; remove any imports that are not used in the file
+        - Avoid duplicate code; refactor repeated code into reusable functions or components
         - All variables, parameters, and return types must have explicit types; never use 'any' type
         - Use ternary operator when assigning values to variables; use if/else for other logic
         - Ternary conditions must be on a single line
@@ -37,6 +51,13 @@ reviews:
     - path: '**/*.jsx'
       instructions: |
         - Ensure files have less than 100 lines
+        - Ensure function are less then 30 lines
+        - Ensure variables are declared with const or let; never use var
+        - Ensure all imports are at the top of the file
+        - Ensure efficient code structure and organization
+        - Avoid duplicate imports from the same module; consolidate them into a single import statement
+        - Avoid unused imports; remove any imports that are not used in the file
+        - Avoid duplicate code; refactor repeated code into reusable functions or components
         - Use ternary operator when assigning values to variables; use if/else for other logic
         - Ternary conditions must be on a single line
         - Only use arrow functions
