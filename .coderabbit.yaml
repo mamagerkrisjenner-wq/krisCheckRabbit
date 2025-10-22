@@ -1,35 +1,55 @@
-language: "en-US"
-early_access: false
-tone_instructions: 'You are an expert code reviewer in Java, TypeScript, JavaScript, and NodeJS. You work in an enterprise software developer team, providing concise and clear code review advice. You only elaborate or provide detailed explanations when requested.'
-reviews:
-  profile: "assertive"
-  request_changes_workflow: false
-  high_level_summary: true
-  poem: true
-  review_status: true
-  collapse_walkthrough: false
-  auto_review:
-    enabled: true
-    drafts: false
-  path_instructions:
-    - path: "src/**/*.ts"
-      instructions: |
-        Review TypeScript files for adherence to project conventions:
-        - Files must be fewer than 100 lines
-        - All variables and functions must have explicit types; avoid any
-        - Use ternary operators only for single-line conditional assignments
-        - Use arrow functions; avoid anonymous functions
-        - Use camelCase for variable and function names
-        - Define constants for strings and numbers; avoid inline literals
-        - Do not use index as object keys; use meaningful names
-        - Use single quotes ' for strings
-        - Put colors in RGB or RGBA (rgba only if transparent) in a separate colors.ts file
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
 
-    - path: "src/components/**/*.tsx"
+language: en-US
+reviews:
+  profile: assertive
+  path_instructions:
+    - path: '**/*.tsx'
       instructions: |
-        Review React component files:
-        - Each component must be in a separate file, named after the component
-        - Components must have explicit types
-        - Do not use React.createClass or React.Component 
-chat:
-  auto_reply: true
+        - Ensure files have less than 100 lines
+        - All variables, parameters, and return types must have explicit types; never use 'any' type
+        - Use ternary operator when assigning values to variables; use if/else for other logic
+        - Ternary conditions must be on a single line
+        - Only use arrow functions
+        - Use functional components only; never use React.createClass or React.Component
+        - Component props must have TypeScript types defined
+        - Use camelCase for variable and function names
+        - Each component must be in a separate file
+        - File name must match the component name
+        - Use single quotes (') instead of double quotes (")
+        - Never use array index as key in lists
+        - Never use anonymous functions; always name functions
+        - Use meaningful and descriptive names for variables, functions, and components
+        - All hardcoded strings and numbers must be extracted to constants (e.g., const HELLO = 'hello'; <h>{HELLO}</h>)
+        - All colors must be in rgb() or rgba() format (rgba only if transparency needed) and defined in a separate colors file
+    - path: '**/*.ts'
+      instructions: |
+        - Ensure files have less than 100 lines
+        - All variables, parameters, and return types must have explicit types; never use 'any' type
+        - Use ternary operator when assigning values to variables; use if/else for other logic
+        - Ternary conditions must be on a single line
+        - Only use arrow functions
+        - Use camelCase for variable and function names
+        - Use single quotes (') instead of double quotes (")
+        - Never use anonymous functions; always name functions
+        - Use meaningful and descriptive names for variables and functions
+        - All hardcoded strings and numbers must be extracted to constants
+    - path: '**/*.jsx'
+      instructions: |
+        - Ensure files have less than 100 lines
+        - Use ternary operator when assigning values to variables; use if/else for other logic
+        - Ternary conditions must be on a single line
+        - Only use arrow functions
+        - Use functional components only; never use React.createClass or React.Component
+        - Use camelCase for variable and function names
+        - Each component must be in a separate file
+        - File name must match the component name
+        - Use single quotes (') instead of double quotes (")
+        - Never use array index as key in lists
+        - Never use anonymous functions; always name functions
+        - Use meaningful and descriptive names for variables, functions, and components
+        - All hardcoded strings and numbers must be extracted to constants
+        - All colors must be in rgb() or rgba() format and defined in a separate colors file
+    - path: '**/*.css'
+      instructions: |
+        - All colors must be in rgb() or rgba() format (rgba only if transparency is needed)
